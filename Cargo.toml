@@ -1,0 +1,8 @@
+[package]
+name = "minimal_glium"
+version = "0.1.0"
+authors = ["Johannes Hoff <johshoff@gmail.com>"]
+
+[dependencies]
+clock_ticks = "0.0.5"
+glium = "*"
