@@ -17,8 +17,12 @@ fn main() {
 
     for _ in 0.. trials {
         let start_ns = clock_ticks::precise_time_ns();
-        for _ in 0..frames {
+        let mut fs = clock_ticks::precise_time_ns();
+        for f in 0..frames {
             display.draw().finish().unwrap();
+            let fd = clock_ticks::precise_time_ns() - fs;
+            println!("Frame #{:3}: {}", f, fd);
+            fs = clock_ticks::precise_time_ns();
         }
 
         let duration_ns = clock_ticks::precise_time_ns() - start_ns;
